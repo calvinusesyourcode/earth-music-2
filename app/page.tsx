@@ -41,6 +41,18 @@ export default function IndexPage() {
     const audio = new Audio('music/world1/C418 - Cat.mp3');
     audio.addEventListener('ended', playNext);
     setAudio1(audio);
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js').then(
+          function(registration) {
+            console.log('Service Worker registration successful with scope: ', registration.scope);
+          }, 
+          function(err) {
+            console.log('Service Worker registration failed: ', err);
+          }
+        );
+      });
+    }
   }, [])
 
   const playNext = () => {
