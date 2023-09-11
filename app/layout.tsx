@@ -10,7 +10,7 @@ import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
 import { useEffect } from "react";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: {
     default: siteConfig.name,
     template: `%s - ${siteConfig.name}`,
@@ -50,7 +50,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
       <html lang="en" suppressHydrationWarning>
-        <head />
+      <head>
+        <title>{"earth-music"}</title>
+        <meta name="description" content={"Theme music for life on earth."} />
+        <meta name="theme-color" media={"(prefers-color-scheme: light)"} content={"white"} />
+        <meta name="theme-color" media={"(prefers-color-scheme: dark)"} content={"black"} />
+        <link rel="icon" href={"/favicon.ico"} />
+        <link rel="shortcut icon" href={"/favicon16x16.png"} />
+        <link rel="apple-touch-icon" href={"/minecraft192.png"} />
+        <link rel="manifest" href="/manifest.json" />
+      </head>
         <body
           className={cn(
             "min-h-screen bg-background font-sans antialiased",
