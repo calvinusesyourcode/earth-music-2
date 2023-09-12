@@ -57,7 +57,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <meta name="theme-color" media={"(prefers-color-scheme: dark)"} content={"black"} />
         <link rel="icon" href={"/favicon.ico"} />
         <link rel="shortcut icon" href={"/favicon16x16.png"} />
-        <link rel="apple-touch-icon" href={"/minecraft192.png"} />
+        <link rel="apple-touch-icon" sizes="192x192" href={"/minecraft192.png"} />
         <link rel="manifest" href="/manifest.json" />
       </head>
         <body
